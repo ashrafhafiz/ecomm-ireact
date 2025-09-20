@@ -33,7 +33,7 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: 'id',
     header: ({ column }) => <DataTableColumnHeader column={column} title="ID" />,
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue('id')}</div>,
+    cell: ({ row }) => <div className="w-[50px]">{row.getValue('id')}</div>,
     enableSorting: false,
     enableHiding: false,
   },
@@ -41,7 +41,25 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: 'name',
     header: ({ column }) => <DataTableColumnHeader column={column} title="Name" />,
     cell: ({ row }) => {
-      return <span className="max-w-[500px] truncate font-medium">{row.getValue('name')}</span>;
+      return <span className="max-w-[200px] truncate font-medium">{row.getValue('name')}</span>;
+    },
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
+    accessorKey: 'email',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Email" />,
+    cell: ({ row }) => {
+      return <span className="max-w-[200px] truncate font-medium">{row.getValue('email')}</span>;
+    },
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
+    accessorKey: 'role',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Role" />,
+    cell: ({ row }) => {
+      return <span className="max-w-[50px] truncate font-medium">{row.getValue('role')}</span>;
     },
     enableSorting: false,
     enableHiding: false,

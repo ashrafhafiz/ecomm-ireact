@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, ArrowUp, CheckCircle, CircleOff } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUp, CheckCircle, CircleOff, User } from 'lucide-react';
 
 export const labels = [
   {
@@ -40,6 +40,29 @@ export const statuses = [
     value: 'inactive',
     label: 'Inactive',
     icon: CircleOff,
+  },
+];
+
+export const roles = [
+  {
+    value: 'admin',
+    label: 'Admin',
+    icon: User,
+  },
+  {
+    value: 'seller',
+    label: 'Seller',
+    icon: User,
+  },
+  {
+    value: 'customer',
+    label: 'Customer',
+    icon: User,
+  },
+  {
+    value: 'user',
+    label: 'User',
+    icon: User,
   },
 ];
 
