@@ -1,16 +1,22 @@
 <?php
 
+use App\Http\Controllers\RolePermissionController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('welcome');
+  return Inertia::render('welcome');
 })->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
+  Route::get('dashboard', function () {
+    return Inertia::render('dashboard');
+  })->name('dashboard');
+});
+
+Route::prefix('roles')->group(function () {
+  Route::get('/', [RolePermissionController::class, 'index'])->name('roles.index');
+  Route::get('/create', [RolePermissionController::class, 'create'])->name('roles.create');
 });
 
 require __DIR__ . '/settings.php';
